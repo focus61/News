@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
     private func constaints() {
         view.addSubview(detailView)
         detailView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),

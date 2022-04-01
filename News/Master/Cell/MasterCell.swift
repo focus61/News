@@ -8,9 +8,7 @@ final class MasterCell: UITableViewCell {
         imageView.contentMode = .scaleToFill
         return imageView
     }()
-    
     let customView = UIView()
-    
     let dateLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
@@ -34,13 +32,14 @@ final class MasterCell: UITableViewCell {
         label.textAlignment = .left
         return label
     }()
+    static let cell = "masterCell"
     
-    static var cell = "masterCell"
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: MasterCell.cell)
         selectionStyle = .none
         constraints()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,7 +47,6 @@ final class MasterCell: UITableViewCell {
     private func constraints() {
         addSubviews(views: myImageView, customView, dateLabel, authorLabel, titleLabel)
         NSLayoutConstraint.activate([
-            
             myImageView.topAnchor.constraint(equalTo: topAnchor),
             myImageView.bottomAnchor.constraint(equalTo: centerYAnchor, constant: 30),
             myImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 30),
@@ -97,4 +95,3 @@ final class MasterCell: UITableViewCell {
         }
     }
 }
-

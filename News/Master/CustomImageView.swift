@@ -2,6 +2,7 @@ import UIKit
 class CustomImageView: UIImageView {
     var task: URLSessionDataTask?
     var activity = UIActivityIndicatorView(style: .large)
+    
     func loadImage(url: URL) {
         image = nil
         addActivity()
@@ -25,6 +26,7 @@ class CustomImageView: UIImageView {
         }
         self.task?.resume()
     }
+    
     func addActivity() {
         addSubview(activity)
         activity.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +34,7 @@ class CustomImageView: UIImageView {
         activity.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         activity.startAnimating()
     }
+    
     func removeActivity() {
         activity.removeFromSuperview()
     }

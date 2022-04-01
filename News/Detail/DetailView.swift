@@ -1,12 +1,12 @@
 import UIKit
 
 final class DetailView: UIView {
-    var detailImageView: CustomImageView = {
+    let detailImageView: CustomImageView = {
         var imgView = CustomImageView()
         return imgView
     }()
     
-    var titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         var label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.numberOfLines = 0
@@ -14,14 +14,14 @@ final class DetailView: UIView {
         return label
     }()
     
-    var authorLabel: UILabel = {
+    let authorLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
         label.textColor = .red
         label.numberOfLines = 0
         return label
     }()
-    var dateLabel: UILabel = {
+    let dateLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -30,14 +30,14 @@ final class DetailView: UIView {
         label.addRightBorder(with: .systemGray3, andWidth: 2)
         return label
     }()
-    var categoryLabel: UILabel = {
+    let categoryLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 15)
         label.numberOfLines = 0
         return label
     }()
-    var descriptionView: UITextView = {
+    let descriptionView: UITextView = {
         var textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18)
         textView.adjustsFontForContentSizeCategory = true
