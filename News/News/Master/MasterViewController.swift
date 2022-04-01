@@ -62,6 +62,7 @@ class MasterViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
     private func timerForConnection() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else {return}
@@ -76,6 +77,52 @@ class MasterViewController: UIViewController {
                 timer.invalidate()
             }
         }.fire()
+    }
+}
+
+//MARK: - Get data and infinite scroll -
+extension MasterViewController {
+    private func getData() {
+        Network.shared { [weak self] data in
+            guard let self = self else {return}
+            self.mainArray = data.news
+            for i in 0..<5 {
+                self.array.append(self.mainArray[i])
+            }
+            DispatchQueue.main.async {
+                self.activityView.stopAnimating()
+                self.tableView.reloadData()
+                self.backgroundView.isHidden = false
+            }
+            self.isLoadingData = false
+        }
+    }
+    
+    private func getMoreData() {
+        if array.count == mainArray.count {return}
+        if !self.isLoadingData {
+            self.isLoadingData = true
+            let start = array.count
+            let end = start + 5
+            DispatchQueue.global().async {
+                sleep(2)
+                for i in start..<end {
+                    self.array.append(self.mainArray[i])
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.isLoadingData = false
+                }
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoadingData  && array.count != mainArray.count {
+            getMoreData()
+        }
     }
 }
 //MARK: - TableViewDataSource configure
@@ -139,6 +186,7 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
             }
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 350
@@ -150,60 +198,8 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !isFiltered {
-            pushSelectedViewController(array: array, indexPath: indexPath)
-        } else {
-            pushSelectedViewController(array: filteredArray, indexPath: indexPath)
-        }
-    }
-    
 }
-//MARK: - Get data and infinite scroll
-extension MasterViewController {
-    private func getData() {
-        Network.shared { [weak self] data in
-            guard let self = self else {return}
-            self.mainArray = data.news
-            for i in 0..<5 {
-                self.array.append(self.mainArray[i])
-            }
-            DispatchQueue.main.async {
-                self.activityView.stopAnimating()
-                self.tableView.reloadData()
-                self.backgroundView.isHidden = false
-            }
-            self.isLoadingData = false
-        }
-    }
-    private func getMoreData() {
-        if array.count == mainArray.count {return}
-        if !self.isLoadingData {
-            self.isLoadingData = true
-            let start = array.count
-            let end = start + 5
-            DispatchQueue.global().async {
-                sleep(2)
-                for i in start..<end {
-                    self.array.append(self.mainArray[i])
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.isLoadingData = false
-                }
-            }
-        }
-    }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoadingData  && array.count != mainArray.count {
-            getMoreData()
-        }
-    }
-}
-//MARK: - Search config
+//MARK: - Search configure -
 extension MasterViewController {
     private func searchConfig() {
         navigationItem.searchController = searchCont
@@ -212,11 +208,20 @@ extension MasterViewController {
         searchCont.searchBar.placeholder = "Search Author"
         searchCont.searchResultsUpdater = self
     }
+    
     func updateSearchResults(for searchController: UISearchController) {
         filteredArray = array.filter {
             $0.author.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "")
         }
         tableView.reloadData()
+    }
+//MARK: - didSelectRow configure -
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !isFiltered {
+            pushSelectedViewController(array: array, indexPath: indexPath)
+        } else {
+            pushSelectedViewController(array: filteredArray, indexPath: indexPath)
+        }
     }
     
     private func pushSelectedViewController(array: [News], indexPath: IndexPath) {
