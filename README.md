@@ -12,8 +12,8 @@
 
  <h2>Structure</h2>
  <p>Приложение показывает последние новости.</p>
- <p><b>Master</b> Данная ветка файлов состоит из: <b>Cell</b> и <b>MasterViewContoller</b></p>
- <p><b>Detail</b>Master</p>
+ <p><b>Master</b> Главный экран показывает ленту последних новостей , с подгрузкой данных.</p>
+ <p><b>Detail</b> Детальный экран показывает подробности указанной новости.</p>
 
  <h2>Screenshots</h2>
  <div style="display:flex;">
