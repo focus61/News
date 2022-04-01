@@ -3,7 +3,7 @@ import UIKit
 //MARK: - TableViewDataSource configure -
     extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
         func numberOfSections(in tableView: UITableView) -> Int {
-            var numOfSections: Int = 0
+            var numOfSections = 0
             if searchCont.isActive && !(searchCont.searchBar.text?.isEmpty ?? false) {
                 numOfSections = noResultLabel(isHaveData: !filteredArray.isEmpty, tableView: tableView)
             } else {
