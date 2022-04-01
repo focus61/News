@@ -1,5 +1,4 @@
 import UIKit
-
 final class MasterCell: UITableViewCell {
     static var imageCahce = NSCache<AnyObject, AnyObject>()
     static var count = 0
