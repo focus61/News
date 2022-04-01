@@ -15,7 +15,7 @@
  <p>Если при скачивании и обработке данных, какой либо объект будет отсутствовать, в приложении используются стандартные объекты(напр. изображения). </p>
  
 ## Structure ##
-<p>Приложение состоит из 2 экранов Master и Detail.</p>
+<p>Приложение состоит из 2 экранов Master и Detail. Основой обоих экранов является UIViewController.Оба экрана сверстаны с помощью кода (anchor), Storyboard и xib не использовался.</p>
 
  - [Master](#master)
  - [Detail](#detail)
@@ -24,8 +24,9 @@
  
  [Master в файловой системе](https://github.com/focus61/News/tree/main/News/News/Master)
  
- <p>Главный экран показывает ленту последних новостей , с подгрузкой данных.</p>
- <p>Основой данного экрана является ViewController с добавленным табличным представлением, с кастомными ячейками</p>
+ <p>Главный экран показывает ленту последних новостей , с подгрузкой данных. На данный экран добавлено табличное представление, с кастомными ячейками.</p> Для работы с получаемыми изображениями и добавлениями их в табличное представление был создан кастомный ImageView.
+ 
+ [CustomImageView](https://github.com/focus61/News/blob/main/News/News/Master/CustomImageView.swift)
  <p>Главный экран поддерживает поиск новостей по авторам:</p>
   <div style="display:flex;">
   <img alt="App image" src="Screenshots/main.png" width="30%">
@@ -36,10 +37,8 @@
 
  [Detail в файловой системе](https://github.com/focus61/News/tree/main/News/News/Detail)
 
-<p>Детальный экран показывает подробности указанной новости.</p>
-
-
- <img alt="App image" src="Screenshots/detail.png" width="30%">
+<p>Детальный экран показывает подробности выбранной новости. Экран состоит из UIView и добавленных на него элементов.</p>
+<img alt="App image" src="Screenshots/detail.png" width="30%">
  
  
  [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/News/Network
