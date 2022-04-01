@@ -30,7 +30,7 @@
  <p>Главный экран поддерживает поиск новостей по авторам:</p>
   <div style="display:flex;">
   <img alt="App image" src="Screenshots/main.png" width="30%">
-  <img alt="App image" src="Screenshots/noResults.png" width="30%">
+  <img alt="App image" src="Screenshots/noResult.png" width="30%">
 
 
 ### Detail ###
