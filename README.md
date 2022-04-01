@@ -4,7 +4,7 @@
  - [Structure](#structure)
  - [Screenshots](#screenshots)
  
- <p> Для выполнения данного ТЗ, я использовал API  с сайта htps://currentsapi.services/en </p>
+ <p> Для выполнения данного ТЗ, я использовал API  с сайта https://currentsapi.services/en </p>
  
  <h2>Operations</h2>
  <p><b>GET</b> /v1/latest-news</p>
