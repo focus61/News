@@ -41,6 +41,6 @@
 <img alt="App image" src="Screenshots/detail.png" width="30%">
  
  
- [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/News/Network
+ [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/Network
  </div>
 
