@@ -13,11 +13,12 @@
  <h2>Structure</h2>
  <p>Приложение показывает последние новости.</p>
  <p><b>Master</b> Главный экран показывает ленту последних новостей , с подгрузкой данных.</p>
+  <img alt="App image" src="Screenshots/main.png" width="30%">
  <p><b>Detail</b> Детальный экран показывает подробности указанной новости.</p>
 
  <h2>Screenshots</h2>
  <div style="display:flex;">
- <img alt="App image" src="Screenshots/main.png" width="30%">
+
  <img alt="App image" src="Screenshots/noResults.png" width="30%">
  <img alt="App image" src="Screenshots/detail.png" width="30%">
  
