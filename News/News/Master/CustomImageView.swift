@@ -13,7 +13,7 @@ class CustomImageView: UIImageView {
             removeActivity()
             return
         }
-        task = URLSession.shared.dataTask(with: url) { [weak self ] data, _, err in
+        task = URLSession.shared.dataTask(with: url) { [weak self] data, _, err in
             guard let data = data, let image = UIImage(data: data) else {
                 return
             }

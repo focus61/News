@@ -6,11 +6,11 @@ class MasterViewController: UIViewController {
     private var tableView =  UITableView()
     private let searchCont = UISearchController()
     private let backgroundView = UILabel()
-    private var mainArray = [News]()
-    private var array = [News]()
+    private var dataArray = [News]()
+    private var firstArray = [News]()
     private var filteredArray = [News]()
     private var isLoadingData = false
-    var activityView = UIActivityIndicatorView()
+    private var activityView = UIActivityIndicatorView()
     
     private var searchIsEmpty: Bool {
         guard let txt = searchCont.searchBar.text else {return false}
@@ -34,15 +34,16 @@ class MasterViewController: UIViewController {
         activityView.hidesWhenStopped = true
     }
     private func viewConfig() {
+        activityConfig()
         self.title = "Latest news"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.addSubview(tableView)
         tableView.addSubview(backgroundView)
-        activityConfig()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.isHidden = true
         backgroundView.font = UIFont.systemFont(ofSize: 30)
         backgroundView.textAlignment = .center
+        
         NSLayoutConstraint.activate([
             
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -66,12 +67,12 @@ class MasterViewController: UIViewController {
     private func timerForConnection() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else {return}
-            if !self.mainArray.isEmpty {
+            if !self.dataArray.isEmpty {
                 timer.invalidate()
             }
             self.timerCount += 1
             if self.timerCount == 15{
-                if self.mainArray.isEmpty {
+                if self.dataArray.isEmpty {
                     Alert.show(self)
                 }
                 timer.invalidate()
@@ -85,9 +86,9 @@ extension MasterViewController {
     private func getData() {
         Network.shared { [weak self] data in
             guard let self = self else {return}
-            self.mainArray = data.news
+            self.dataArray = data.news
             for i in 0..<5 {
-                self.array.append(self.mainArray[i])
+                self.firstArray.append(self.dataArray[i])
             }
             DispatchQueue.main.async {
                 self.activityView.stopAnimating()
@@ -99,15 +100,15 @@ extension MasterViewController {
     }
     
     private func getMoreData() {
-        if array.count == mainArray.count {return}
+        if firstArray.count == dataArray.count {return}
         if !self.isLoadingData {
             self.isLoadingData = true
-            let start = array.count
+            let start = firstArray.count
             let end = start + 5
             DispatchQueue.global().async {
                 sleep(2)
                 for i in start..<end {
-                    self.array.append(self.mainArray[i])
+                    self.firstArray.append(self.dataArray[i])
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -120,12 +121,12 @@ extension MasterViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
-        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoadingData  && array.count != mainArray.count {
+        if (offsetY > contentHeight - scrollView.frame.height * 4) && !isLoadingData  && firstArray.count != dataArray.count {
             getMoreData()
         }
     }
 }
-//MARK: - TableViewDataSource configure
+//MARK: - TableViewDataSource configure -
 extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -143,9 +144,9 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
                     return 0
                 }
             } else {
-                if array.count > 0 {
+                if firstArray.count > 0 {
                     self.tableView.backgroundView = .none;
-                    return array.count
+                    return firstArray.count
                 } else {
                     self.tableView.backgroundView = backgroundView
                     backgroundView.text = "No results"
@@ -164,13 +165,13 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
                 return UITableViewCell()
             }
             if !isFiltered {
-                cell.configure(data: array, indexPath: indexPath, cell: cell)
+                cell.configure(data: firstArray, indexPath: indexPath, cell: cell)
             } else {
                 cell.configure(data: filteredArray, indexPath: indexPath, cell: cell)
             }
             return cell
         } else {
-            if array.count != mainArray.count {
+            if firstArray.count != dataArray.count {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingCell.cell, for: indexPath) as? LoadingCell else {
                     return UITableViewCell()
                 }
@@ -180,6 +181,7 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
                 } else {
                     cell.activityInd.isHidden = true
                 }
+                tableView.separatorStyle = .none
                 return cell
             } else {
                 return UITableViewCell()
@@ -191,7 +193,7 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
         if indexPath.section == 0 {
             return 350
         } else {
-            if array.count != mainArray.count {
+            if firstArray.count != dataArray.count {
                 return 30
             } else {
                 return 0
@@ -210,7 +212,7 @@ extension MasterViewController {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        filteredArray = array.filter {
+        filteredArray = firstArray.filter {
             $0.author.lowercased().contains(searchController.searchBar.text?.lowercased() ?? "")
         }
         tableView.reloadData()
@@ -218,7 +220,7 @@ extension MasterViewController {
 //MARK: - didSelectRow configure -
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isFiltered {
-            pushSelectedViewController(array: array, indexPath: indexPath)
+            pushSelectedViewController(array: firstArray, indexPath: indexPath)
         } else {
             pushSelectedViewController(array: filteredArray, indexPath: indexPath)
         }

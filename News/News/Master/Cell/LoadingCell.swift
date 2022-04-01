@@ -4,6 +4,7 @@ class LoadingCell: UITableViewCell {
     var activityInd = UIActivityIndicatorView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: LoadingCell.cell)
+        
         activityInd.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityInd)
         activityInd.isHidden = true

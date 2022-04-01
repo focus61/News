@@ -37,18 +37,19 @@ class DetailView: UIView {
         label.numberOfLines = 0
         return label
     }()
-    var descriptionLabel: UILabel = {
-        var label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        return label
+    var descriptionView: UITextView = {
+        var textView = UITextView()
+        textView.font = UIFont.systemFont(ofSize: 18)
+        textView.adjustsFontForContentSizeCategory = true
+        textView.isEditable = false
+        textView.text = " "
+        textView.textAlignment = .left
+        return textView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews(views: detailImageView, titleLabel, authorLabel, dateLabel, categoryLabel, descriptionLabel)
+        addSubviews(views: detailImageView, titleLabel, authorLabel, dateLabel, categoryLabel, descriptionView)
         constraints()
     }
     
@@ -83,10 +84,10 @@ class DetailView: UIView {
             categoryLabel.rightAnchor.constraint(equalTo: rightAnchor),
             categoryLabel.leftAnchor.constraint(equalTo: dateLabel.rightAnchor, constant: 10),
             
-            descriptionLabel.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            descriptionLabel.rightAnchor.constraint(equalTo: rightAnchor),
-            descriptionLabel.leftAnchor.constraint(equalTo: leftAnchor)
+            descriptionView.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor),
+            descriptionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            descriptionView.rightAnchor.constraint(equalTo: rightAnchor, constant: 5),
+            descriptionView.leftAnchor.constraint(equalTo: leftAnchor, constant: -5)
             
         ])
     }
