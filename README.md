@@ -1,6 +1,7 @@
 # News app
 
  - [Operations](#operations)
+ - [Structure](#structure)
  - [Screenshots](#screenshots)
  
  <h2>Operations</h2>
