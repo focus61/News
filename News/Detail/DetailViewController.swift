@@ -1,6 +1,4 @@
-
 import UIKit
-
 class DetailViewController: UIViewController {
     var detailView = DetailView()
     var detailTitle = ""

@@ -1,9 +1,8 @@
-
 import UIKit
 //MARK: - TableViewDataSource configure -
-    extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
         func numberOfSections(in tableView: UITableView) -> Int {
-            var numOfSections: Int = 0
+            var numOfSections = 0
             if searchCont.isActive && !(searchCont.searchBar.text?.isEmpty ?? false) {
                 numOfSections = noResultLabel(isHaveData: !filteredArray.isEmpty, tableView: tableView)
             } else {
@@ -104,4 +103,22 @@ import UIKit
             }
             self.navigationController?.pushViewController(vc, animated: true)
         }
+//MARK: - noResult -
+    func noResultLabel(isHaveData: Bool, tableView: UITableView) -> Int {
+        var numberOfSections = 0
+        if isHaveData {
+            tableView.separatorStyle = .singleLine
+            numberOfSections = 2
+            tableView.backgroundView = nil
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text = "No results"
+            noDataLabel.font = UIFont.systemFont(ofSize: 25)
+            noDataLabel.textColor = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+        }
+        return numberOfSections
     }
+}
