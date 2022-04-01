@@ -22,11 +22,11 @@
 
 ### Master ###
  
- [Master в файловой системе](https://github.com/focus61/News/tree/main/News/News/Master)
+ [Master в файловой системе](https://github.com/focus61/News/tree/main/News/Master)
  
  <p>Главный экран показывает ленту последних новостей , с подгрузкой данных. На данный экран добавлено табличное представление, с кастомными ячейками.</p> Для работы с получаемыми изображениями и добавлениями их в табличное представление был создан кастомный ImageView.
  
- [CustomImageView](https://github.com/focus61/News/blob/main/News/News/Master/CustomImageView.swift)
+ [CustomImageView](https://github.com/focus61/News/blob/main/News/Master/CustomImageView.swift)
  <p>Главный экран поддерживает поиск новостей по авторам:</p>
   <div style="display:flex;">
   <img alt="App image" src="Screenshots/main.png" width="30%">
@@ -35,7 +35,7 @@
 
 ### Detail ###
 
- [Detail в файловой системе](https://github.com/focus61/News/tree/main/News/News/Detail)
+ [Detail в файловой системе](https://github.com/focus61/News/tree/main/News/Detail)
 
 <p>Детальный экран показывает подробности выбранной новости. Экран состоит из UIView и добавленных на него элементов.</p>
 <img alt="App image" src="Screenshots/detail.png" width="30%">
