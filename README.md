@@ -1,28 +1,46 @@
 # News app
+<b>Приложение показывает последние новости.</b>
+<p>Разделы README:</p>
 
- - [Operations](#operations)
+ - [Request](#request)
  - [Structure](#structure)
- - [Screenshots](#screenshots)
- 
 
- <h2>Operations</h2>
- <p> Для выполнения данного ТЗ, я использовал API  с сайта https://currentsapi.services/en </p>
+## Request ##
+ <p>Для выполнения данного ТЗ, я использовал API  с сайта https://currentsapi.services/en.</p>
  <p><b>GET</b> /v1/latest-news</p>
  
-
- <h2>Structure</h2>
- <p>Приложение показывает последние новости.</p>
- <p><b>Master</b> Главный экран показывает ленту последних новостей , с подгрузкой данных.</p>
- <p> Также главный экран поддерживает поиск новостей по авторам</p>
-  <img alt="App image" src="Screenshots/main.png" width="30%">
-  
- <p><b>Detail</b> Детальный экран показывает подробности указанной новости.</p>
-
- <h2>Screenshots</h2>
- <div style="display:flex;">
-
- <img alt="App image" src="Screenshots/noResults.png" width="30%">
- <img alt="App image" src="Screenshots/detail.png" width="30%">
+ [Network в файловой системе]
+ <p>В случае отсутствия интернет соединения в течении 15 секунд, всплывает Alert и в последствии закрывается приложение: </p>
+ <img alt="App image" src="Screenshots/noConnection.png" width="30%">
+ <p>Если при скачивании и обработке данных, какой либо объект будет отсутствовать, в приложении используются стандартные объекты(напр. изображения). </p>
  
+## Structure ##
+<p>Приложение состоит из 2 экранов Master и Detail. Основой обоих экранов является UIViewController.Оба экрана сверстаны с помощью кода (anchor), Storyboard и xib не использовался.</p>
+
+ - [Master](#master)
+ - [Detail](#detail)
+
+### Master ###
+ 
+ [Master в файловой системе](https://github.com/focus61/News/tree/main/News/News/Master)
+ 
+ <p>Главный экран показывает ленту последних новостей , с подгрузкой данных. На данный экран добавлено табличное представление, с кастомными ячейками.</p> Для работы с получаемыми изображениями и добавлениями их в табличное представление был создан кастомный ImageView.
+ 
+ [CustomImageView](https://github.com/focus61/News/blob/main/News/News/Master/CustomImageView.swift)
+ <p>Главный экран поддерживает поиск новостей по авторам:</p>
+  <div style="display:flex;">
+  <img alt="App image" src="Screenshots/main.png" width="30%">
+  <img alt="App image" src="Screenshots/noResults.png" width="30%">
+
+
+### Detail ###
+
+ [Detail в файловой системе](https://github.com/focus61/News/tree/main/News/News/Detail)
+
+<p>Детальный экран показывает подробности выбранной новости. Экран состоит из UIView и добавленных на него элементов.</p>
+<img alt="App image" src="Screenshots/detail.png" width="30%">
+ 
+ 
+ [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/News/Network
  </div>
 
