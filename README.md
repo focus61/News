@@ -26,11 +26,9 @@
  
  <p>Главный экран показывает ленту последних новостей , с подгрузкой данных.</p>
  <p>Основой данного экрана является ViewController с добавленным табличным представлением, с кастомными ячейками</p>
- <p>Также главный экран поддерживает поиск новостей по авторам:</p>
+ <p>Главный экран поддерживает поиск новостей по авторам:</p>
+  <div style="display:flex;">
   <img alt="App image" src="Screenshots/main.png" width="30%">
-  
- <p>В случае, если автор не найден: </p>
- 
   <img alt="App image" src="Screenshots/noResults.png" width="30%">
 
 
@@ -39,8 +37,6 @@
  [Detail в файловой системе](https://github.com/focus61/News/tree/main/News/News/Detail)
 
 <p>Детальный экран показывает подробности указанной новости.</p>
-
- <div style="display:flex;">
 
 
  <img alt="App image" src="Screenshots/detail.png" width="30%">
