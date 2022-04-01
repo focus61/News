@@ -6,6 +6,7 @@ extension UIView {
             self.addSubview(i)
         }
     }
+    
     func addBottomBorder(color: UIColor = UIColor.red, margins: CGFloat = 0, borderLineSize: CGFloat = 1) {
                let border = UIView()
                border.backgroundColor = color
@@ -36,13 +37,7 @@ extension UIView {
                                                      attribute: .trailing,
                                                      multiplier: 1, constant: margins))
         }
-    func addLeftBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
-        let border = UIView()
-        border.backgroundColor = color
-        border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: frame.size.height - 10)
-        border.autoresizingMask = [.flexibleHeight, .flexibleRightMargin]
-        addSubview(border)
-    }
+    
     func addRightBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
         let border = UIView()
         border.backgroundColor = color

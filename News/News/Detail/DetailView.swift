@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailView: UIView {
+final class DetailView: UIView {
     var detailImageView: CustomImageView = {
         var imgView = CustomImageView()
         return imgView

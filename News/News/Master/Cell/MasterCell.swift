@@ -1,6 +1,6 @@
 import UIKit
 
-class MasterCell: UITableViewCell {
+final class MasterCell: UITableViewCell {
     static var imageCahce = NSCache<AnyObject, AnyObject>()
     static var count = 0
     let myImageView: CustomImageView = {

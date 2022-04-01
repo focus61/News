@@ -1,5 +1,5 @@
 import UIKit
-class LoadingCell: UITableViewCell {
+final class LoadingCell: UITableViewCell {
     static var cell = "loadingCell"
     var activityInd = UIActivityIndicatorView()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

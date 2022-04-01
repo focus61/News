@@ -38,11 +38,19 @@ class MasterViewController: UIViewController {
         self.title = "Latest news"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.addSubview(tableView)
+        
         tableView.addSubview(backgroundView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(MasterCell.self, forCellReuseIdentifier: MasterCell.cell)
+        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.cell)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        
         backgroundView.isHidden = true
         backgroundView.font = UIFont.systemFont(ofSize: 30)
         backgroundView.textAlignment = .center
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
@@ -57,13 +65,8 @@ class MasterViewController: UIViewController {
             activityView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
-        
-        tableView.register(MasterCell.self, forCellReuseIdentifier: MasterCell.cell)
-        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.cell)
-        tableView.delegate = self
-        tableView.dataSource = self
     }
-    
+//MARK: - if connection is failed -
     private func timerForConnection() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else {return}
@@ -71,7 +74,7 @@ class MasterViewController: UIViewController {
                 timer.invalidate()
             }
             self.timerCount += 1
-            if self.timerCount == 15{
+            if self.timerCount == 15 {
                 if self.dataArray.isEmpty {
                     Alert.show(self)
                 }
@@ -181,7 +184,6 @@ extension MasterViewController: UITableViewDelegate, UITableViewDataSource, UISe
                 } else {
                     cell.activityInd.isHidden = true
                 }
-                tableView.separatorStyle = .none
                 return cell
             } else {
                 return UITableViewCell()
