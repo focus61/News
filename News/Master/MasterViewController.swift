@@ -1,4 +1,3 @@
-
 import UIKit
 class MasterViewController: UIViewController {
     let activityView = UIActivityIndicatorView()
