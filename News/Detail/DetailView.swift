@@ -1,5 +1,4 @@
 import UIKit
-
 final class DetailView: UIView {
     let detailImageView: CustomImageView = {
         var imgView = CustomImageView()
