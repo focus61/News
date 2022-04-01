@@ -1,6 +1,5 @@
 
 import UIKit
-
 class MasterViewController: UIViewController {
     let activityView = UIActivityIndicatorView()
     let tableView =  UITableView()
@@ -43,9 +42,10 @@ class MasterViewController: UIViewController {
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.cell)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10),
             tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 10),
@@ -141,7 +141,8 @@ extension MasterViewController {
             tableView.backgroundView = nil
         } else {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-            noDataLabel.text = "No data available"
+            noDataLabel.text = "No results"
+            noDataLabel.font = UIFont.systemFont(ofSize: 25)
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
             tableView.backgroundView = noDataLabel
