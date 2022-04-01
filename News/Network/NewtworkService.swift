@@ -1,5 +1,4 @@
 import Foundation
-
 struct Network {
     static func shared (complitionHandler: @escaping ((NetworkModel) -> ()))  {
         let urlString = "https://api.currentsapi.services/v1/latest-news?apiKey=m7znJe2XUUdTtiqQRtdS-Lipv-aVYX9f-x67-UtLFsoY64hp"
