@@ -8,7 +8,9 @@
 # Request #
  <p> Для выполнения данного ТЗ, я использовал API  с сайта https://currentsapi.services/en.</p>
  <p><b>GET</b> /v1/latest-news</p>
- <p> Запрос и модель обработки получаемых данных находятся в папке [Network](# https://www.google.com ) </p>
+ <p> Запрос и модель обработки получаемых данных находятся в папке: </p>
+ 
+ [Network]
  <p> В случае отсутствия интернет соединения в течении 15 секунд, всплывает Alert и в последствии закрывается приложение: </p>
  <img alt="App image" src="Screenshots/noConnection.png" width="30%">
  
@@ -38,5 +40,7 @@
 
  <img alt="App image" src="Screenshots/detail.png" width="30%">
  
+ 
+ [Network]:https://github.com/focus61/News/tree/main/News/News/Network
  </div>
 
