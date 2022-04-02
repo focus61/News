@@ -22,7 +22,6 @@
 		9D9E398427F3101E00F20C9D /* MasterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E398327F3101E00F20C9D /* MasterCell.swift */; };
 		9D9E398627F399D800F20C9D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E398527F399D800F20C9D /* LoadingCell.swift */; };
 		9D9E398E27F5023600F20C9D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E398D27F5023600F20C9D /* CustomImageView.swift */; };
-		9DDE36D627F790C000B87BEA /* VC+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE36D527F790C000B87BEA /* VC+TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		9D9E398327F3101E00F20C9D /* MasterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCell.swift; sourceTree = "<group>"; };
 		9D9E398527F399D800F20C9D /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		9D9E398D27F5023600F20C9D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		9DDE36D527F790C000B87BEA /* VC+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+TableViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 			children = (
 				9D5CDB6C27F5A9E500429BE1 /* Cell */,
 				9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */,
-				9DDE36D527F790C000B87BEA /* VC+TableViewDataSource.swift */,
 				9D9E398D27F5023600F20C9D /* CustomImageView.swift */,
 			);
 			path = Master;
@@ -222,7 +219,6 @@
 				9D9E396827F2D5C900F20C9D /* AppDelegate.swift in Sources */,
 				9D9E397C27F2D5EF00F20C9D /* NewtworkService.swift in Sources */,
 				9D9E398427F3101E00F20C9D /* MasterCell.swift in Sources */,
-				9DDE36D627F790C000B87BEA /* VC+TableViewDataSource.swift in Sources */,
 				9D5CDB6927F5A4FD00429BE1 /* MasterViewController.swift in Sources */,
 				9D9E398627F399D800F20C9D /* LoadingCell.swift in Sources */,
 				9D9E397E27F2D79800F20C9D /* NetworkModel.swift in Sources */,
