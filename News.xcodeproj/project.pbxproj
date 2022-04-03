@@ -13,6 +13,9 @@
 		9D43D2CD27F60902008C5883 /* Extension_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43D2CC27F60902008C5883 /* Extension_String.swift */; };
 		9D5CDB6927F5A4FD00429BE1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */; };
 		9D5CDB6B27F5A97800429BE1 /* Extension_UIVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CDB6A27F5A97800429BE1 /* Extension_UIVIEW.swift */; };
+		9D8F1FA827FA0B2500F56B9E /* InfiniteScrollConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F1FA727FA0B2500F56B9E /* InfiniteScrollConfigure.swift */; };
+		9D8F1FAA27FA0BEC00F56B9E /* SearchControllerConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F1FA927FA0BEB00F56B9E /* SearchControllerConfigure.swift */; };
+		9D8F1FAC27FA0C7200F56B9E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F1FAB27FA0C7200F56B9E /* CustomTableView.swift */; };
 		9D9E396827F2D5C900F20C9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E396727F2D5C900F20C9D /* AppDelegate.swift */; };
 		9D9E396A27F2D5C900F20C9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E396927F2D5C900F20C9D /* SceneDelegate.swift */; };
 		9D9E397127F2D5CC00F20C9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9E397027F2D5CC00F20C9D /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		9D43D2CC27F60902008C5883 /* Extension_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_String.swift; sourceTree = "<group>"; };
 		9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		9D5CDB6A27F5A97800429BE1 /* Extension_UIVIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIVIEW.swift; sourceTree = "<group>"; };
+		9D8F1FA727FA0B2500F56B9E /* InfiniteScrollConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollConfigure.swift; sourceTree = "<group>"; };
+		9D8F1FA927FA0BEB00F56B9E /* SearchControllerConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerConfigure.swift; sourceTree = "<group>"; };
+		9D8F1FAB27FA0C7200F56B9E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		9D9E396427F2D5C900F20C9D /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9E396727F2D5C900F20C9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D9E396927F2D5C900F20C9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		9D8F1FAD27FA0DBF00F56B9E /* ViewController_Configure */ = {
+			isa = PBXGroup;
+			children = (
+				9D8F1FA727FA0B2500F56B9E /* InfiniteScrollConfigure.swift */,
+				9D8F1FA927FA0BEB00F56B9E /* SearchControllerConfigure.swift */,
+			);
+			path = ViewController_Configure;
+			sourceTree = "<group>";
+		};
+		9D8F1FAE27FA0DE000F56B9E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				9D8F1FAB27FA0C7200F56B9E /* CustomTableView.swift */,
+				9D9E398D27F5023600F20C9D /* CustomImageView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		9D9E395B27F2D5C800F20C9D = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +161,8 @@
 			children = (
 				9D5CDB6C27F5A9E500429BE1 /* Cell */,
 				9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */,
-				9D9E398D27F5023600F20C9D /* CustomImageView.swift */,
+				9D8F1FAE27FA0DE000F56B9E /* CustomView */,
+				9D8F1FAD27FA0DBF00F56B9E /* ViewController_Configure */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -215,7 +240,9 @@
 				9D43D2C627F5D329008C5883 /* DetailViewController.swift in Sources */,
 				9D43D2C927F5D37A008C5883 /* DetailView.swift in Sources */,
 				9D43D2CD27F60902008C5883 /* Extension_String.swift in Sources */,
+				9D8F1FA827FA0B2500F56B9E /* InfiniteScrollConfigure.swift in Sources */,
 				9D9E398E27F5023600F20C9D /* CustomImageView.swift in Sources */,
+				9D8F1FAA27FA0BEC00F56B9E /* SearchControllerConfigure.swift in Sources */,
 				9D9E396827F2D5C900F20C9D /* AppDelegate.swift in Sources */,
 				9D9E397C27F2D5EF00F20C9D /* NewtworkService.swift in Sources */,
 				9D9E398427F3101E00F20C9D /* MasterCell.swift in Sources */,
@@ -224,6 +251,7 @@
 				9D9E397E27F2D79800F20C9D /* NetworkModel.swift in Sources */,
 				9D5CDB6B27F5A97800429BE1 /* Extension_UIVIEW.swift in Sources */,
 				9D43D2C227F5CFEC008C5883 /* Alert.swift in Sources */,
+				9D8F1FAC27FA0C7200F56B9E /* CustomTableView.swift in Sources */,
 				9D9E396A27F2D5C900F20C9D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
