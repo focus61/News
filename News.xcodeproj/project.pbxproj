@@ -146,7 +146,7 @@
 				9D43D2CA27F60807008C5883 /* Extension&Other */,
 				9D43D2CB27F6084F008C5883 /* AppDelegate */,
 				9D9E398227F3100900F20C9D /* Master */,
-				9D9E398127F30FFD00F20C9D /* Network */,
+				9D9E398127F30FFD00F20C9D /* NetworkService */,
 				9D9E397027F2D5CC00F20C9D /* Assets.xcassets */,
 				9D9E397227F2D5CC00F20C9D /* LaunchScreen.storyboard */,
 				9D9E397527F2D5CC00F20C9D /* Info.plist */,
@@ -155,13 +155,13 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		9D9E398127F30FFD00F20C9D /* Network */ = {
+		9D9E398127F30FFD00F20C9D /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				9D9E397B27F2D5EF00F20C9D /* NewtworkService.swift */,
 				9D9E397D27F2D79800F20C9D /* NetworkModel.swift */,
 			);
-			path = Network;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		9D9E398227F3100900F20C9D /* Master */ = {
