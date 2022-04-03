@@ -42,7 +42,6 @@
 <img alt="App image" src="Screenshots/detail.png" width="30%">
  
  
- [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/Network
  
  ## Stack ##
  - UINavigationController
@@ -55,5 +54,8 @@
  - GCD
  - URLSession
  - Timer
+ 
+  [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/NetworkService
+
  </div>
 
