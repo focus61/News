@@ -98,13 +98,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		9D8F1FAD27FA0DBF00F56B9E /* ViewController_Configure */ = {
+		9D8F1FAD27FA0DBF00F56B9E /* MasterViewController_Configure */ = {
 			isa = PBXGroup;
 			children = (
 				9D8F1FA727FA0B2500F56B9E /* InfiniteScrollConfigure.swift */,
 				9D8F1FA927FA0BEB00F56B9E /* SearchControllerConfigure.swift */,
 			);
-			path = ViewController_Configure;
+			path = MasterViewController_Configure;
 			sourceTree = "<group>";
 		};
 		9D8F1FAE27FA0DE000F56B9E /* CustomView */ = {
@@ -114,6 +114,14 @@
 				9D9E398D27F5023600F20C9D /* CustomImageView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		9D8F1FAF27FA105F00F56B9E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9D9E395B27F2D5C800F20C9D = {
@@ -160,9 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				9D5CDB6C27F5A9E500429BE1 /* Cell */,
-				9D5CDB6827F5A4FC00429BE1 /* MasterViewController.swift */,
+				9D8F1FAF27FA105F00F56B9E /* Controller */,
 				9D8F1FAE27FA0DE000F56B9E /* CustomView */,
-				9D8F1FAD27FA0DBF00F56B9E /* ViewController_Configure */,
+				9D8F1FAD27FA0DBF00F56B9E /* MasterViewController_Configure */,
 			);
 			path = Master;
 			sourceTree = "<group>";
