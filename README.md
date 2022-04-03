@@ -54,5 +54,6 @@
  - NSLayoutAnchor
  - GCD
  - URLSession
+ - Timer
  </div>
 
