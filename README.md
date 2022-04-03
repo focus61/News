@@ -53,5 +53,7 @@
  - UITableView & UITableViewCell
  - NSLayoutAnchor
  - GCD
+ - URLSession
+ - Timer
  </div>
 
