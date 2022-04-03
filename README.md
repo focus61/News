@@ -27,7 +27,7 @@
  
  <p>Главный экран показывает ленту последних новостей , с подгрузкой данных. На данный экран добавлено табличное представление, с кастомными ячейками.</p> Для работы с получаемыми изображениями и добавлениями их в табличное представление был создан кастомный ImageView.
  
- [CustomImageView](https://github.com/focus61/News/blob/main/News/Master/CustomImageView.swift)
+ [CustomImageView](https://github.com/focus61/News/blob/main/News/Master/CustomView/CustomImageView.swift)
  <p>Главный экран поддерживает поиск новостей по авторам:</p>
   <div style="display:flex;">
   <img alt="App image" src="Screenshots/main.png" width="30%">
