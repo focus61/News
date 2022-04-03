@@ -4,6 +4,7 @@
 
  - [Request](#request)
  - [Structure](#structure)
+ - [Stack](#stack)
 
 ## Request ##
  <p>Для выполнения данного ТЗ, я использовал API  с сайта https://currentsapi.services/en.</p>
@@ -42,5 +43,15 @@
  
  
  [Network в файловой системе]:https://github.com/focus61/News/tree/main/News/Network
+ 
+ ## Stack ##
+ - UINavigationController
+ - UIViewController
+ - UISearchController
+ - UIAlertController
+ - UIView & UILabel & UIImageView
+ - UITableView & UITableViewCell
+ - NSLayoutAnchor
+ 
  </div>
 
